@@ -36,25 +36,29 @@ const quiz = [
 let currentQuestionIndex = 0;
 let totalscore = 0;
 let quizOver = false;
+// Start Quiz function
+const startQuiz = () =>{
+    scrambleQuestions();
+}
 // Arrow Function for showing Questions
 const showQuestions = () => {
-    const questionDetails = quiz[currentQuestionIndex];   
+    const questionDetails = quiz[currentQuestionIndex];
     questionBox.textContent = questionDetails.question;
-    choicesBox.textContent = "";
-    console.log(choicesBox.textContent)
+    choicesBox.textContent = "";    
     for (let i = 0; i < questionDetails.choices.length; i++) {
         const currentChoice = questionDetails.choices[i];
         const choiceDiv = document.createElement('div');
         choiceDiv.textContent = currentChoice;
         choiceDiv.classList.add('choice');
-        choicesBox.appendChild(choiceDiv);
+        choicesBox.appendChild(choiceDiv);        
         choiceDiv.addEventListener('click', () => {
-            if (choiceDiv.classList.contains('selected')) {
-                choiceDiv.classList.remove('selected');
-            }
-            else {
-                choiceDiv.classList.add('selected');
-            }
+            // Remove 'selected' class from all choices
+            const allChoices = choicesBox.getElementsByClassName('choice');
+            for (let j = 0; j < allChoices.length; j++) {
+                allChoices[j].classList.remove('selected');
+            }            
+            // Add 'selected' class to the clicked choice
+            choiceDiv.classList.add('selected');
         });
     }
 }
@@ -98,10 +102,6 @@ const scrambleQuestions = () =>{
     currentQuestionIndex = 0;
     showQuestions();
 }
-// Start Quiz function
-const startQuiz = () =>{
-    scrambleQuestions();
-}
 // Adding Event Listener to Start Button
 startBtn.addEventListener('click', ()=>{
     startBtn.style.display = "none";
@@ -111,7 +111,6 @@ startBtn.addEventListener('click', ()=>{
 function handleClick() {
     const selectedChoice = document.querySelector('.choice.selected');
     if (!selectedChoice && nextBtn.textContent === "Submit") {
-        // console.log("Select your answer");
         displayAlert("Select your answer");
         return;
     }
