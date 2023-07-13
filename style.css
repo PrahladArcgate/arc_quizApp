@@ -47,7 +47,7 @@ body {
     animation: fade-in 0.5s ease forwards;
 }
 .choice.selected{   
-    color: #fff;
+    color: #3c8832;
 }
 .btn{
     width: 60%;

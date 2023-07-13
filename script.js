@@ -8,27 +8,27 @@ const startBtn = document.querySelector('.startBtn');
 // array of objects that stores question.
 const quiz = [
     {
-        question: "1.What year was Javascript launched?",
+        question: "Q.What year was Javascript launched?",
         choices: ["1998", "1995", "1994", "Non of these"],
         answer: "1995"
     },
     {
-        question: "2.What does HTML stand for?",
+        question: "Q.What does HTML stand for?",
         choices: ["Hypertext Markup Language", " Hyperthext Markdown Language", "Hyperloop Machine Language", "const myFunction = () => {};"],
         answer: "Hypertext Markup Language"
     },
     {
-        question: "3.What does CSS stand for?",
+        question: "Q.What does CSS stand for?",
         choices: ["C", "Python", "java", "JavaScript"],
         answer: "JavaScript"
     },
     {
-        question: "4.What is the purpose of the this keyword in JavaScript?",
+        question: "Q.What is the purpose of the this keyword in JavaScript?",
         choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
         answer: "It refers to the current object."
     },
     {
-        question: "5.What are the features of JavaScript?",
+        question: "Q.What are the features of JavaScript?",
         choices: ["Open Source", "Lightweight", "Non of these.", "platefrom-based applications"],
         answer: "Open Source"
     }
