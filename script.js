@@ -8,7 +8,7 @@ const startBtn = document.querySelector('.startBtn');
 // array of objects that stores question.
 const quiz = [
     {
-        question: "Q.What year was Javascript launched?",
+            question: "Q.What year was Javascript launched?",
         choices: ["1998", "1995", "1994", "Non of these"],
         answer: "1995"
     },
@@ -33,12 +33,25 @@ const quiz = [
         answer: "Open Source"
     }
 ];
+// input user
+  function validate_username_email() {
+    var username = document.getElementById('User-name').value;
+    var email = document.getElementById('email').value;  
+    // Store username and email in session storage
+    localStorage.setItem('username', username);
+    localStorage.setItem('email', email);     
+  }
+    $(window).on('load', function () {
+        $('#Login').modal('show');
+    });
 let currentQuestionIndex = 0;
 let totalscore = 0;
 let quizOver = false;
 // Start Quiz function
-const startQuiz = () =>{
+const startQuiz = () =>{    
     scrambleQuestions();
+    var uname=localStorage.getItem('username');
+    document.getElementById('username').innerText=uname;         
 }
 // Arrow Function for showing Questions
 const showQuestions = () => {
@@ -109,7 +122,7 @@ startBtn.addEventListener('click', ()=>{
     startQuiz();
 });
 function handleClick() {
-    const selectedChoice = document.querySelector('.choice.selected');
+    const selectedChoice = document.querySelector('.choice.selected');       
     if (!selectedChoice && nextBtn.textContent === "Submit") {
         displayAlert("Select your answer");
         return;
@@ -126,3 +139,4 @@ function handleClick() {
     }
 }
 nextBtn.addEventListener('click', handleClick);
+
