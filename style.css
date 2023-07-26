@@ -92,3 +92,43 @@ body {
         transform: translateY(0);
     }
 }
+.backButton,
+    #reloadbtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Hover effect */
+    .backButton:hover,
+    #reloadbtn:hover {
+      background-color: #0056b3;
+    }
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+      
+      table th,
+      table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #fff;
+      }
+      
+      table th {
+        background-color: #006400;
+        color: #fff;
+      }
+      
+      table tr:nth-child(even) {
+        background-color: #d3d3d3;
+      }     
+.newBtn {
+    width: 133px;
+}
